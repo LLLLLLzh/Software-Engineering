@@ -70,7 +70,7 @@ V Hashtable<K, V>::getvalue(K newkey) {
 	int position = hasher->hashfunc(newkey);
 	std::list<std::pair<K, V>> currlist = hashtable[position];
 	for (auto pairintable : currlist) {
-		if (equalpred->predicate(key, pairintable.first)) {
+		if (equalpred->predicate(newkey, pairintable.first)) {
 			return pairintable.second;
 		}
 	}
